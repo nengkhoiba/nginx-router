@@ -54,8 +54,8 @@ server {
 
     server_name $domain;
 
-    ssl_certificate /etc/nginx/ssl/live/apeiro.digital/fullchain.pem;
-    ssl_certificate_key /etc/nginx/ssl/live/apeiro.digital/privkey.pem;
+    ssl_certificate /etc/nginx/ssl/live/$domain/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/$domain/privkey.pem;
 
     location / {
         return 301 https://$destination$request_uri;
@@ -103,8 +103,8 @@ server {
 
     server_name $domain;
 
-    ssl_certificate /etc/nginx/ssl/live/apeiro.digital/fullchain.pem;
-    ssl_certificate_key /etc/nginx/ssl/live/apeiro.digital/privkey.pem;
+    ssl_certificate /etc/nginx/ssl/live/$domain/fullchain.pem;
+    ssl_certificate_key /etc/nginx/ssl/live/$domain/privkey.pem;
 
     root /var/www/html;  # Change this path to the location of your build files
     location / {
